@@ -1,0 +1,5 @@
+.container {
+  width: calc(956px + 16px * 2);
+  margin: 0 auto;
+  padding: 0 16px;
+}
