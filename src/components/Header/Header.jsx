@@ -9,7 +9,7 @@ import './Header.css';
 
 export const Header = () => {
   return (
-    <header>
+    <header className="header">
       <Container className="header__container">
         <Icon className="logo" hrefIconName="#logo" />
         <FormSearch />
