@@ -6,6 +6,7 @@ import './Button.css';
 export const Button = ({
   variant,
   color,
+  upper,
   className,
   href,
   type = 'button',
@@ -26,6 +27,7 @@ export const Button = ({
     return (
       <a
         className={classNames('btn', className, {
+          upper,
           ...variants,
           ...colors,
         })}
@@ -40,6 +42,7 @@ export const Button = ({
   return (
     <button
       className={classNames('btn', className, {
+        upper,
         ...variants,
         ...colors,
       })}
