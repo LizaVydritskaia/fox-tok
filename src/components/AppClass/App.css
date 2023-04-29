@@ -1,0 +1,14 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.content {
+  grid-column: 5 / 13;
+  padding: 48px 0;
+}
+
+.content hr {
+  margin: 24px 0;
+}
