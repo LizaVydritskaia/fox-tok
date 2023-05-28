@@ -9,7 +9,7 @@ export const Footer = () => (
         About
       </a>
       <a href="#" className="footer__link">
-        Contact
+        Contacts
       </a>
       <a href="#" className="footer__link">
         Careers
