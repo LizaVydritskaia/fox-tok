@@ -1,5 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
+
+import { usePostContext } from '../../contexts/Post.context';
 
 import { Button } from '../Button';
 import { Icon } from '../Icon';
@@ -15,8 +17,22 @@ const videoStatus = {
 export const Post = ({ id, avatar, altText, author, video }) => {
   const videoRef = useRef(null);
   const [status, setStatus] = useState(videoStatus.Stopped);
+  const { activeVideoId, setActiveVideoId } = usePostContext();
+
+  useEffect(() => {
+    if (
+      videoRef.current &&
+      status !== videoStatus.Stopped &&
+      activeVideoId !== id
+    ) {
+      setStatus(videoStatus.Stopped);
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  }, [activeVideoId, id, status]);
 
   const handlePlay = () => {
+    setActiveVideoId(id);
     setStatus(videoStatus.Playing);
     videoRef.current.play();
   };
