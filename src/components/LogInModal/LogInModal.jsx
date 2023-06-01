@@ -1,8 +1,9 @@
 import React, { forwardRef, useId } from 'react';
 
-import './LogInModal.css';
-import { Modal } from '../Modal';
 import { Button } from '../Button';
+import { Modal } from '../Modal';
+
+import './LogInModal.css';
 
 export const LogInModal = forwardRef(function LogInModal(_, ref) {
   const emailId = useId();

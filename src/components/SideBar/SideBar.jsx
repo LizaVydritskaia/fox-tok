@@ -4,11 +4,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '../Button';
 import { Footer } from '../Footer/Footer';
 import { Icon } from '../Icon';
-
-import './SideBar.css';
+import { LogInModal } from '../LogInModal';
 
 import { menu } from './config';
-import { LogInModal } from '../LogInModal';
+
+import './SideBar.css';
 
 export const SideBar = () => {
   const logInRef = useRef(null);
