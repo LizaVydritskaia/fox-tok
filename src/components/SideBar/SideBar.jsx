@@ -15,7 +15,6 @@ export const SideBar = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   return (
     <>

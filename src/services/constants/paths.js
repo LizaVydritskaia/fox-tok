@@ -2,6 +2,7 @@ export const PAGE = {
   about: 'about',
   contacts: 'contacts',
   careers: 'careers',
+  login: 'login',
 };
 
 export const PATH = {
@@ -9,4 +10,5 @@ export const PATH = {
   about: '/about',
   contacts: '/contacts',
   careers: '/careers',
+  login: '/login',
 };

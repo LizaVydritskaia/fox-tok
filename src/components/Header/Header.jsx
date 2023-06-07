@@ -1,18 +1,17 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Button } from '../Button';
 import { Container } from '../Container';
 import { FormSearch } from '../FormSearch';
 import { Icon } from '../Icon';
-import { LogInModal } from '../LogInModal';
 
 import { PATH } from '../../services/constants/paths';
 
 import './Header.css';
 
 export const Header = () => {
-  const logInRef = useRef(null);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -27,13 +26,12 @@ export const Header = () => {
               <Icon hrefIconName="#plus" />
               Upload
             </Button>
-            <Button color="primary" onClick={() => logInRef.current.open()}>
+            <Button color="primary" onClick={() => navigate(PATH.login)}>
               Log in
             </Button>
           </div>
         </Container>
       </header>
-      <LogInModal ref={logInRef} />
     </>
   );
 };

@@ -14,11 +14,13 @@ import { Posts } from '../pages/Posts';
 import { PATH } from '../services/constants/paths';
 
 import { getPosts } from '../services/posts';
+import { LoginPage } from '../pages/LoginPage';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<SystemLayout />}>
       <Route errorElement={<ErrorBoundary />}>
+        <Route path={PATH.login} element={<LoginPage />} />
         <Route path={PATH.index} element={<App />}>
           <Route errorElement={<ErrorBoundary />}>
             <Route
