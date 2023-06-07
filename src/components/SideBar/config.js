@@ -1,18 +1,18 @@
+import { PATH } from '../../services/constants/paths';
+
 export const menu = [
   {
     id: 'for-you',
     title: 'For You',
     iconHref: '#home',
     upper: false,
-    color: 'primary',
-    href: '#',
+    href: PATH.index,
   },
   {
     id: 'following',
     title: 'Following',
     iconHref: '#users',
     upper: false,
-    color: '',
     href: '#',
   },
   {
@@ -20,7 +20,6 @@ export const menu = [
     title: 'Live',
     iconHref: '#camera',
     upper: true,
-    color: '',
     href: '#',
   },
 ];
