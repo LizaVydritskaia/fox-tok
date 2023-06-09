@@ -1,6 +1,12 @@
-import React, { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { Suspense, useEffect } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
+//constants
+import { authStatuses } from '../../services/constants/authStatuses';
+import { PATH } from '../../services/constants/paths';
+
+//components
 import { Container } from '../Container';
 import { Header } from '../Header';
 import { Loader } from '../Loader';
@@ -10,6 +16,17 @@ import { Sprite } from '../Sprite';
 import './App.css';
 
 export const App = () => {
+  const loggedOut = useSelector(
+    (state) => state.auth.status !== authStatuses.loggedIn,
+  );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loggedOut) {
+      navigate(PATH.login);
+    }
+  }, [loggedOut, navigate]);
+
   return (
     <>
       <Sprite />
