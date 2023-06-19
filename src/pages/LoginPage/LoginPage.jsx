@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { authStatuses } from '../../services/constants/authStatuses';
 import { PATH } from '../../services/constants/paths';
-import { changeAuthStatus } from '../../store/actions';
+import { changeStatus } from '../../store/slices/auth.slice';
 
 import { Button } from '../../components/Button';
 import { Icon } from '../../components/Icon';
@@ -25,7 +25,7 @@ export const LoginPage = () => {
     const password = formData.get('password');
 
     if (email && password) {
-      dispatch(changeAuthStatus(authStatuses.loggedIn));
+      dispatch(changeStatus(authStatuses.loggedIn));
       navigate(PATH.index);
     }
   };
